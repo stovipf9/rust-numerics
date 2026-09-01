@@ -6,6 +6,8 @@
 - [章0 浮動小数点と丸め](ch00-float.md)
 - [章1 根の探索](ch01-roots.md)
 - [章2 密行列の線形代数](ch02-linalg.md)
+  - [章2b 固有値問題](ch02b-eigen.md)
+  - [章2c 補間と近似](ch02c-interp.md)
 - [章3 求積](ch03-quad.md)
 - [章4 常微分方程式](ch04-ode.md)
   - [章4b 確率微分方程式](ch04b-sde.md)

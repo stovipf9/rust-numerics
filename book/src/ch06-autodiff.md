@@ -166,7 +166,7 @@ use std::ops::Mul;
 struct Dual { re: f64, du: f64 }
 impl Mul for Dual {
     type Output = Dual;
-    fn mul(self, o: Dual) -> Dual { /* 積の微分法則がここに入る */ }
+    fn mul(self, o: Dual) -> Dual { todo!() }  // 積の微分法則がここに入る
 }
 ```
 
@@ -211,7 +211,7 @@ trait Elementary:
 generic であるべきなのは**ユーザ関数のほう**で、solver は `f64` 固定のままでよい。
 
 ```rust
-fn newton(f: impl Fn(f64) -> f64, df: impl Fn(f64) -> f64, x0: f64) -> f64 { /* f64 固定 */ }
+fn newton(f: impl Fn(f64) -> f64, df: impl Fn(f64) -> f64, x0: f64) -> f64 { todo!() }
 
 fn poly<T: Elementary>(x: T) -> T { x * x - T::lit(2.0) }   // ユーザ関数だけ generic
 

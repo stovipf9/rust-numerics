@@ -47,9 +47,31 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - **Higham（上記）第20章 "The Least Squares Problem"、§20.1** — 最小二乗の摂動論。
   \\(\kappa/\cos\theta + \kappa^2\tan\theta\\) 型の限界は Wedin の定理（Theorem 20.1）。
   **章番号は第2版のもの**（第1版では第19章）
-- **Wilkinson, _The Algebraic Eigenvalue Problem_ (Oxford, 1965)** — 後退安定性の枠組みの原典
+- Wilkinson, _The Algebraic Eigenvalue Problem_ (Oxford, 1965) — 後退安定性の枠組みの原典
 - **Shewchuk, "An Introduction to the Conjugate Gradient Method Without the Agonizing Pain"
   (CMU, 1994)** — CG の \\(\sqrt\kappa\\) がどこから来るかを幾何的に説明する。無料
+
+## 章2b 固有値問題
+
+- Trefethen & Bau（上記）Part V（Lecture 24–31） — 固有値問題。
+  べき乗法・逆べき乗法・Rayleigh 商反復が Lecture 27、QR 法が Lecture 28–29。
+  この章の主要な下敷き。Lanczos はここではなく Part VI（Lecture 36）にある
+- Parlett, _The Symmetric Eigenvalue Problem_ (Prentice-Hall, 1980; SIAM Classics 復刊 1998) —
+  対称固有値問題の標準的な参照。Lanczos の直交性の喪失と再直交化
+- Golub & Van Loan（上記） — 非対称の QR 法、Hessenberg 化、Golub–Kahan の二重対角化
+- Wilkinson（上記、_The Algebraic Eigenvalue Problem_） —
+  「特性多項式で解いてはいけない」の原典側。悪条件多項式の例もここ
+
+## 章2c 補間と近似
+
+- Trefethen, _Approximation Theory and Approximation Practice_ (SIAM, 2013; 拡張版 2019) —
+  多項式補間・Chebyshev 節点・barycentric 形式。Runge 現象がなぜ起きるかを正面から扱う。
+  **この章に最も近い1冊**
+- Berrut & Trefethen, "Barycentric Lagrange Interpolation," _SIAM Review_ 46(3), 2004 —
+  「Lagrange 形式は遅くて不安定」という通念を覆した論文
+- de Boor, _A Practical Guide to Splines_ (Springer, revised ed., 2001) —
+  スプラインの標準的な参照。端点条件と not-a-knot
+- Davis, _Interpolation and Approximation_ (Blaisdell, 1963; Dover 復刊 1975) — 古典的な参照
 
 ## 章3 求積
 
