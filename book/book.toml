@@ -1,0 +1,8 @@
+[book]
+title = "Rust で数値計算"
+authors = ["stovipf9"]
+language = "ja"
+src = "src"
+
+[output.html]
+mathjax-support = true
