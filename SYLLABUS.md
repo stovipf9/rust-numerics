@@ -47,7 +47,8 @@ numerics/
 │   ├── lib.rs
 │   ├── float.rs           # 章0
 │   ├── roots.rs           # 章1
-│   ├── linalg/            # 章2（大きくなるのでディレクトリ）
+│   ├── linalg/            # 章2・章2b（大きくなるのでディレクトリ）
+│   ├── interp.rs          # 章2c
 │   ├── quad.rs            # 章3
 │   ├── ode.rs             # 章4
 │   ├── optim.rs           # 章5
@@ -125,11 +126,9 @@ numerics/
 
 ---
 
-## 章2. 密行列の線形代数
+## 章2. 密行列の線形代数 & 章2b. 固有値問題 & 章2c. 補間と近似
 
-**この章が Rust 的には本丸。** 最も時間をかける。
-
-**題材**: LU 分解（部分ピボット選択）、QR 分解（Householder）、SVD、Cholesky、反復法（Jacobi / Gauss–Seidel / 共役勾配法）。
+**この章が Rust 的には本丸。** 最も時間をかける。**題材**: LU 分解（部分ピボット選択）、QR 分解（Householder）、SVD、Cholesky、反復法（Jacobi / Gauss–Seidel / 共役勾配法）。章2b は固有値（べき乗法・QR 法・Lanczos）、章2c は補間（Lagrange / Newton / Chebyshev / スプライン）で、章2c は章3の前提。
 
 **Rust の設計判断**:
 - **クレート選定**: `ndarray` 0.17（23.7M）/ `nalgebra` 0.35（15.2M）/ `faer` 0.24（1.4M）。ndarray = NumPy 相当の n 次元配列、nalgebra = 固定サイズ・幾何寄り、faer = pure Rust の高性能密行列。**この選択自体が最初の課題**。まず自前の最小 `Matrix` 型を書いてから既製品に移ると、何が解決されているかが分かる
