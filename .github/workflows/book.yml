@@ -44,8 +44,16 @@ jobs:
       - uses: actions/checkout@v7
       - run: cargo test
 
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress './**/*.md'
+
   deploy:
-    needs: [build, test]
+    needs: [build, test, links]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
