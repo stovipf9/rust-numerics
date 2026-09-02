@@ -4,5 +4,10 @@ authors = ["stovipf9"]
 language = "ja"
 src = "src"
 
+[build]
+# 既定は "book"。本のルートが book/ なので book/book になり、外側と内側の
+# どちらを指しているのか読めなくなる。
+build-dir = "html"
+
 [output.html]
 mathjax-support = true
