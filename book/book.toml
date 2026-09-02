@@ -11,3 +11,4 @@ build-dir = "html"
 
 [output.html]
 mathjax-support = true
+git-repository-url = "https://github.com/stovipf9/numerics"
