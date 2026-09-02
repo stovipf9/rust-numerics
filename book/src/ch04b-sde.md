@@ -2,7 +2,7 @@
 
 [常微分方程式](ch04-ode.md)の後半。ODE の離散化をひととおり見た後で読む。
 
-**弱収束の実測には Monte Carlo が要る（[FFT と Monte Carlo](ch07-fft-mc.md)）。** 順序としてはあちらを読んでから
+**弱収束の実測には Monte Carlo が要る。** 順序としては[FFT と Monte Carlo](ch07-fft-mc.md)を読んでから
 このページの完了条件に戻るのが正しい。強収束のほうは Monte Carlo なしで測れる。
 
 ## 定式化

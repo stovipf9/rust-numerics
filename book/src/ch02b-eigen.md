@@ -195,7 +195,7 @@ LAPACK は両方の API を持っている。**「複素数を型で持つか、
 | 対角行列・三角行列 | 対角成分そのもの |
 | 回転行列 \\(\begin{pmatrix}\cos\theta & -\sin\theta\\\\ \sin\theta & \cos\theta\end{pmatrix}\\) | \\(e^{\pm i\theta}\\)（実行列だが複素固有値） |
 | \\(n\times n\\) の \\(\mathrm{tridiag}(-1,2,-1)\\) | \\(4\sin^2\dfrac{k\pi}{2(n+1)}\\)、\\(k=1,\ldots,n\\) |
-| [最適化](ch05-optim.md)の Rosenbrock の Hesse 行列（最小点） | 行列はそちらに載っている。\\(2\times2\\) なので手で解ける |
+| [最適化](ch05-optim.md)の Rosenbrock の Hesse 行列（最小点） | \\(2\times2\\) なので手で解ける |
 
 3行目が特に良い。**定数倍と符号を除いて[PDE の差分法](ch08-pde.md)の離散 Laplacian**なので、
 ここで作ったソルバーがその安定性解析の \\(\lambda_m\\) を再現するか確かめられる。
