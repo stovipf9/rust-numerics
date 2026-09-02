@@ -2,7 +2,7 @@
 
 数値解析を Rust で実装しながら進めるための、本と crate。
 
-読むほう → <https://stovipf9.github.io/numerics/>
+読むほう → <https://stovipf9.github.io/rust-numerics/>
 
 数学の教科書でも言語の教科書でもなく、その接続を書いている——「この数学的事実が、
 Rust のどの言語機構と噛み合うのか」。設計判断の結論・実装・テストは本に書かない。
