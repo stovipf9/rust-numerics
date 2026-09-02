@@ -12,3 +12,9 @@ build-dir = "html"
 [output.html]
 mathjax-support = true
 git-repository-url = "https://github.com/stovipf9/numerics"
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"

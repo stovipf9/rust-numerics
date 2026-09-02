@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MDBOOK_VERSION: 0.5.4
+      MDBOOK_MERMAID_VERSION: 0.17.1
     steps:
       - uses: actions/checkout@v7
 
@@ -28,6 +29,11 @@ jobs:
           mkdir -p "$HOME/.local/bin"
           curl -sSL "$url" | tar -xz -C "$HOME/.local/bin"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: mdbook-mermaid を入れる
+        run: |
+          url="https://github.com/badboy/mdbook-mermaid/releases/download/v${MDBOOK_MERMAID_VERSION}/mdbook-mermaid-v${MDBOOK_MERMAID_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+          curl -sSL "$url" | tar -xz -C "$HOME/.local/bin"
 
       - name: 本をビルドする
         run: mdbook build book

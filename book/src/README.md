@@ -36,9 +36,51 @@ Lax の同値定理、Koksma–Hlawka の不等式、Céa の補題……）は�
 
 ## 読み方
 
-[浮動小数点と丸め](ch00-float.md)だけは先に読む。全章に効くので、ここを飛ばすと後の章の誤差の議論が宙に浮く。薄い。
+```mermaid
+flowchart LR
+  float["浮動小数点と丸め"]
+  roots["根の探索"]
+  linalg["密行列の線形代数"]
+  eigen["固有値問題"]
+  interp["補間と近似"]
+  quad["求積"]
+  ode["常微分方程式"]
+  sde["確率微分方程式"]
+  optim["最適化"]
+  ad["自動微分"]
+  fft["FFT と Monte Carlo"]
+  pde["PDE の差分法"]
+  fem["有限要素法"]
 
-[根の探索](ch01-roots.md)以降は目次の順に読めば足りるが、**依存はかなり多い。** 本文で明示的に前章を呼んでいる箇所:
+  float --> roots
+  roots --> linalg
+  linalg --> eigen
+  linalg --> interp
+  linalg --> optim
+  interp --> quad
+  quad --> ode
+  ode --> sde
+  ode --> ad
+  optim --> ad
+  ad --> fem
+  sde --> fft
+  fft --> pde
+  pde --> fem
+  ad -.-> sde
+  fft -.-> sde
+```
+
+点線は逆向き——**後ろの章に依存している**。2本とも[確率微分方程式](ch04b-sde.md)に入り、
+[FFT と Monte Carlo](ch07-fft-mc.md)とは相互依存になる。
+
+- **FFT と Monte Carlo からは必須。** 弱収束の実測は Monte Carlo の統計誤差の扱いを要求するので、
+  あちらを読んでから[確率微分方程式](ch04b-sde.md)の完了条件に戻る。強収束のほうは Monte Carlo なしで測れる
+- **[自動微分](ch06-autodiff.md)からは任意。** Milstein に要る \\(\partial b/\partial x\\) は手書きでも数値微分でも済む
+
+矢印が出ていない章は、後の章がそれを前提にしないというだけである。
+[固有値問題](ch02b-eigen.md)は[密行列の線形代数](ch02-linalg.md)が条件数の計算法を送っている先で、飛ばす章ではない。
+
+下の表は**本文で明示的に前章を呼んでいる箇所**。
 
 | 章 | 依存先 | 何を使うか |
 |---|---|---|
@@ -58,16 +100,6 @@ Lax の同値定理、Koksma–Hlawka の不等式、Céa の補題……）は�
 **[固有値問題](ch02b-eigen.md)と[補間と近似](ch02c-interp.md)は「[密行列の線形代数](ch02-linalg.md)の一部」ではない。**
 目次で隣り合っているだけで、固有値問題はその道具立てをそのまま使う独立した題材、
 補間と近似は[求積](ch03-quad.md)の前提として置いてある。
-
-**依存先が後ろに来る（＝順序違反の）行が表にある。**
-
-- **確率微分方程式 → FFT と Monte Carlo は必須。** 弱収束の実測は Monte Carlo の統計誤差の扱いを要求するので、
-  **[FFT と Monte Carlo](ch07-fft-mc.md)を読んでから[確率微分方程式](ch04b-sde.md)の完了条件に戻る。**
-  強収束のほうは Monte Carlo なしで測れる
-- **確率微分方程式 → 自動微分 は任意。** Milstein に要る \\(\partial b/\partial x\\) は手書きでも数値微分でも済む
-
-これ以外にも、前の章が後の章を「そこで回収する」と予告している箇所がいくつかある
-（[根の探索](ch01-roots.md)→[自動微分](ch06-autodiff.md)、[密行列の線形代数](ch02-linalg.md)→[有限要素法](ch08b-fem.md) など）。予告なので、読む順を変える必要はない。
 
 とくに繋がりが強い組み合わせがある。**[自動微分](ch06-autodiff.md)と[有限要素法](ch08b-fem.md)は同じ問題**（相互参照するグラフの所有権）を
 同じ道具（arena / インデックス方式）で解く。そして**[密行列の線形代数](ch02-linalg.md)の共役勾配法は
