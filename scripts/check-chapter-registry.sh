@@ -4,8 +4,12 @@
 set -u
 cd "$(dirname "$0")/.." || exit 1
 
-CHAPTERS="0 1 2 2b 2c 3 4 4b 5 6 7 8 8b"
 REGISTRIES="book/src/README.md book/src/notation.md book/src/exercises.md book/src/references.md SYLLABUS.md"
+
+# 章ファイル名から章番号を出す（ch02b-eigen.md → 2b）
+chapter_number() {
+    echo "$1" | sed 's/^ch//; s/-.*//; s/^0*\([0-9]\)/\1/'
+}
 
 fail=0
 
@@ -20,9 +24,11 @@ done
 echo "== 各レジストリに全章が出てくるか =="
 for reg in $REGISTRIES; do
     miss=""
-    for n in $CHAPTERS; do
-        # 「章N」の形か、README の依存表のように行頭の表セル「| N |」の形
-        grep -qE "章${n}([^0-9bc]|\$)" "$reg" || grep -qE "^\| ${n} \|" "$reg" || miss="$miss $n"
+    for f in book/src/ch*.md; do
+        b=$(basename "$f")
+        n=$(chapter_number "$b")
+        # 「章N」と書いてあるか、その章へのリンクがあるか
+        grep -qE "章${n}([^0-9bc]|\$)" "$reg" || grep -qF "]($b)" "$reg" || miss="$miss $n"
     done
     if [ -n "$miss" ]; then
         echo "  NG $reg に無い章:$miss"
