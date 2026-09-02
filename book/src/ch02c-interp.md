@@ -26,7 +26,7 @@ p(x) = \sum_{i} f(x_i)\,\ell_i(x), \qquad
 ### Newton 形式と差分商
 
 \\[
-p(x) = f[x_0] + f[x_0,x_1](x-x_0) + \cdots + f[x_0,\ldots,x_n]\prod_{i<n}(x-x_i)
+p(x) = f[x_0] + f[x_0,x_1]\,(x-x_0) + \cdots + f[x_0,\ldots,x_n]\prod_{i<n}(x-x_i)
 \\]
 
 係数は**差分商**の三角形の表から出る。
