@@ -10,14 +10,14 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 
 - **Trefethen & Bau, _Numerical Linear Algebra_ (SIAM, 1997)** —
   40 の講義に分かれていて、1つが1晩で読める。数値線形代数はこれ1冊でよい。
-  条件数・後退安定性・QR・SVD の扱いがこの本の[章2](ch02-linalg.md)の下敷きになっている
+  条件数・後退安定性・QR・SVD の扱いがこの本の[密行列の線形代数](ch02-linalg.md)の下敷きになっている
 - **Higham, _Accuracy and Stability of Numerical Algorithms_ (SIAM, 2nd ed., 2002)** —
   丸め誤差解析の百科事典。補償付き総和の誤差限界、成長因子、
   「\\(O(nu)\\) は最悪評価で実測は \\(O(\sqrt n u)\\) 的」といった話の出典はほぼここにある
 - **Golub & Van Loan, _Matrix Computations_ (JHU Press, 4th ed., 2013)** — 参照用
-- **Nocedal & Wright, _Numerical Optimization_ (Springer, 2nd ed., 2006)** — [章5](ch05-optim.md)の標準
+- **Nocedal & Wright, _Numerical Optimization_ (Springer, 2nd ed., 2006)** — [最適化](ch05-optim.md)の標準
 
-## [章0](ch00-float.md) 浮動小数点
+## [浮動小数点と丸め](ch00-float.md)
 
 - **Goldberg, "What Every Computer Scientist Should Know About Floating-Point
   Arithmetic," _ACM Computing Surveys_ 23(1), 1991** — 定番。無料で読める
@@ -28,7 +28,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - **Demmel & Nguyen, "Parallel Reproducible Summation," _IEEE Trans. Computers_ 64(7), 2015** —
   順序に依存しない総和（ReproBLAS）。並列化と再現性の話の出典
 
-## [章1](ch01-roots.md) 根の探索
+## [根の探索](ch01-roots.md)
 
 - **Brent, _Algorithms for Minimization without Derivatives_ (Prentice-Hall, 1973)** —
   Brent 法の原典。二分法と補間をどう混ぜるかの判断が読める
@@ -39,7 +39,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
   (Cambridge, 3rd ed., 2007) 第9章 "Root Finding and Nonlinear Sets of Equations"** —
   停止条件の実務
 
-## [章2](ch02-linalg.md) 密行列の線形代数
+## [密行列の線形代数](ch02-linalg.md)
 
 - **Trefethen & Bau（上記）** — この章の主要な下敷き。
   Part II（Lecture 6–11）が QR と最小二乗、Part III（Lecture 12–19）が条件数と安定性。
@@ -51,7 +51,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - **Shewchuk, "An Introduction to the Conjugate Gradient Method Without the Agonizing Pain"
   (CMU, 1994)** — CG の \\(\sqrt\kappa\\) がどこから来るかを幾何的に説明する。無料
 
-## [章2b](ch02b-eigen.md) 固有値問題
+## [固有値問題](ch02b-eigen.md)
 
 - Trefethen & Bau（上記）Part V（Lecture 24–31） — 固有値問題。
   べき乗法・逆べき乗法・Rayleigh 商反復が Lecture 27、QR 法が Lecture 28–29。
@@ -62,7 +62,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - Wilkinson（上記、_The Algebraic Eigenvalue Problem_） —
   「特性多項式で解いてはいけない」の原典側。悪条件多項式の例もここ
 
-## [章2c](ch02c-interp.md) 補間と近似
+## [補間と近似](ch02c-interp.md)
 
 - Trefethen, _Approximation Theory and Approximation Practice_ (SIAM, 2013; 拡張版 2019) —
   多項式補間・Chebyshev 節点・barycentric 形式。Runge 現象がなぜ起きるかを正面から扱う。
@@ -73,7 +73,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
   スプラインの標準的な参照。端点条件と not-a-knot
 - Davis, _Interpolation and Approximation_ (Blaisdell, 1963; Dover 復刊 1975) — 古典的な参照
 
-## [章3](ch03-quad.md) 求積
+## [求積](ch03-quad.md)
 
 - **Davis & Rabinowitz, _Methods of Numerical Integration_ (Academic Press, 2nd ed., 1984)** —
   求積の標準的な参照。Gauss 型の理論と Euler–Maclaurin
@@ -82,7 +82,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - **Gander & Gautschi, "Adaptive Quadrature—Revisited," _BIT_ 40(1), 2000** —
   適応 Simpson の誤差推定と \\(1/15\\)、停止条件の落とし穴
 
-## [章4](ch04-ode.md) 常微分方程式
+## [常微分方程式](ch04-ode.md)
 
 - **Hairer, Nørsett & Wanner, _Solving Ordinary Differential Equations I: Nonstiff Problems_
   (Springer, 2nd ed., 1993)** — Butcher の障壁、Dormand–Prince、刻み幅制御。この章の主要な出典
@@ -91,7 +91,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - **Butcher, _Numerical Methods for Ordinary Differential Equations_ (Wiley, 3rd ed., 2016)** —
   段数と次数の関係の原典側
 
-## [章4b](ch04b-sde.md) 確率微分方程式
+## [確率微分方程式](ch04b-sde.md)
 
 - **Kloeden & Platen, _Numerical Solution of Stochastic Differential Equations_
   (Springer, 1992)** — 標準的な参照。強収束・弱収束の定義と次数、仮定（Lipschitz と線形増大）
@@ -104,7 +104,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
   coefficients," _Proc. R. Soc. A_ 467(2130), 2011, pp. 1563–1576 —
   仮定を外すと発散する、の出典
 
-## [章5](ch05-optim.md) 最適化
+## [最適化](ch05-optim.md)
 
 - **Nocedal & Wright（上記）** — 直線探索、Wolfe 条件、BFGS の正定値性、L-BFGS の two-loop
 - **Boyd & Vandenberghe, _Convex Optimization_ (Cambridge, 2004)** —
@@ -116,7 +116,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - Bottou, Curtis & Nocedal, "Optimization Methods for Large-Scale Machine Learning,"
   _SIAM Review_ 60(2), 2018, pp. 223–311 — 決定論的最適化と確率的最適化の断絶を正面から扱う
 
-## [章6](ch06-autodiff.md) 自動微分
+## [自動微分](ch06-autodiff.md)
 
 - **Griewank & Walther, _Evaluating Derivatives_ (SIAM, 2nd ed., 2008)** —
   自動微分の標準的な参照。cheap gradient principle の定式化とコスト評価
@@ -128,7 +128,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - Griewank, "A Mathematical View of Automatic Differentiation," _Acta Numerica_ 12, 2003,
   pp. 321–398 — 非平滑点と分岐の扱い（**本文未確認**。書誌のみ照合）
 
-## [章7](ch07-fft-mc.md) FFT と Monte Carlo
+## [FFT と Monte Carlo](ch07-fft-mc.md)
 
 - **Van Loan, _Computational Frameworks for the Fast Fourier Transform_ (SIAM, 1992)** —
   Cooley–Tukey を行列分解として書く。bit-reversal の構造が見通せる
@@ -140,7 +140,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - **Owen, _Monte Carlo theory, methods and examples_ (2013–, 執筆中の教科書)** —
   分散削減とランダム化 QMC。無料
 
-## [章8](ch08-pde.md) 差分法
+## [PDE の差分法](ch08-pde.md)
 
 - **LeVeque, _Finite Difference Methods for Ordinary and Partial Differential Equations_
   (SIAM, 2007)** — von Neumann 解析、CFL、Lax の同値定理。この章の主要な出典
@@ -150,7 +150,7 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 - **Richtmyer & Morton, _Difference Methods for Initial-Value Problems_ (Wiley, 2nd ed., 1967)** —
   Lax の同値定理の原典側。安定性の定義がノルムに依存することが明示されている
 
-## [章8b](ch08b-fem.md) 有限要素法
+## [有限要素法](ch08b-fem.md)
 
 - **Brenner & Scott, _The Mathematical Theory of Finite Element Methods_
   (Springer, 3rd ed., 2008)** — Lax–Milgram、Céa の補題、補間誤差。誤差評価の骨格
@@ -164,6 +164,6 @@ Dahlquist の第2障壁、Lax の同値定理、Koksma–Hlawka の不等式、C
 
 - **_The Rust Programming Language_ (公式)** と **_The Rustonomicon_** —
   借用の分割（`split_at_mut`）と `unsafe` の境界
-- **_Rust API Guidelines_** — 公開 API の慣用。[章1](ch01-roots.md)・[章4](ch04-ode.md)の「どう受け取るか」の判断材料
+- **_Rust API Guidelines_** — 公開 API の慣用。[根の探索](ch01-roots.md)・[常微分方程式](ch04-ode.md)の「どう受け取るか」の判断材料
 - **docs.rs の各クレート** — `ndarray` / `nalgebra` / `faer` / `argmin` / `ode_solvers` /
   `rustfft`。**この本で「API 設計を読む」と書いてある箇所はここを指す**
