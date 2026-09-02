@@ -14,7 +14,7 @@
 - [最適化](ch05-optim.md)
 - [自動微分](ch06-autodiff.md)
 - [FFT と Monte Carlo](ch07-fft-mc.md)
-- [偏微分方程式——差分法](ch08-pde.md)
+- [PDE の差分法](ch08-pde.md)
 - [有限要素法](ch08b-fem.md)
 
 ---
