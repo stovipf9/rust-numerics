@@ -11,6 +11,11 @@ chapter_number() {
     echo "$1" | sed 's/^ch//; s/-.*//; s/^0*\([0-9]\)/\1/'
 }
 
+# 章ファイル名から章題を出す（SUMMARY.md の表記が唯一の出どころ）
+chapter_title() {
+    sed -n "s/^- \[\(.*\)\]($1)\$/\1/p" book/src/SUMMARY.md
+}
+
 fail=0
 
 echo "== 章ファイルと SUMMARY の対応 =="
@@ -27,8 +32,13 @@ for reg in $REGISTRIES; do
     for f in book/src/ch*.md; do
         b=$(basename "$f")
         n=$(chapter_number "$b")
-        # 「章N」と書いてあるか、その章へのリンクがあるか
-        grep -qE "章${n}([^0-9bc]|\$)" "$reg" || grep -qF "]($b)" "$reg" || miss="$miss $n"
+        t=$(chapter_title "$b")
+        if [ -z "$t" ]; then
+            echo "  NG $b の章題を SUMMARY.md から取れない"; fail=1; continue
+        fi
+        # 「章N」と書いてあるか、その章へのリンクがあるか、章題そのものがあるか
+        grep -qE "章${n}([^0-9bc]|\$)" "$reg" || grep -qF "]($b)" "$reg" \
+            || grep -qF "$t" "$reg" || miss="$miss $n"
     done
     if [ -n "$miss" ]; then
         echo "  NG $reg に無い章:$miss"
