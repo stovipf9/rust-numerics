@@ -1,5 +1,5 @@
 [book]
-title = "Rust で数値計算"
+title = "数値解析を Rust で書く"
 authors = ["stovipf9"]
 language = "ja"
 src = "src"

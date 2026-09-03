@@ -1,6 +1,6 @@
-# Rust で数値計算
+# 数値解析を Rust で書く
 
-数値解析を Rust で実装しながら進めるための、本と crate。
+自分で実装しながら進めるための、本と crate。
 
 読むほう → <https://stovipf9.github.io/rust-numerics/>
 
