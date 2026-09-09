@@ -24,6 +24,6 @@ cargo test          # 章と目次・記号表・演習の対応を検査する
 mdbook serve book   # 本を読む
 ```
 
-`mdbook` と `mdbook-mermaid` が要る（Arch では `extra/mdbook`、後者は
-`cargo install mdbook-mermaid`）。数式は MathJax で描画するので、生の Markdown では
+`mdbook` と `mdbook-mermaid` が要る（`cargo install mdbook mdbook-mermaid`。
+Arch なら両方 `extra` にある）。数式は MathJax で描画するので、生の Markdown では
 `\\[ \\]` が見えるが、ビルドすれば数式になる。

@@ -122,5 +122,5 @@ flowchart LR
 数値を眺めるより速いし、描く過程で軸の取り方（対数か線形か、何を横軸にするか）を決めることになる。
 その判断自体が完了条件の一部である。
 
-本をビルドするには `mdbook` が要る（Arch では `extra/mdbook`）。`book/` で `mdbook serve` すると、表示された URL で読める。
+本をビルドするには `mdbook` と `mdbook-mermaid` が要る（`cargo install mdbook mdbook-mermaid`。Arch なら両方 `extra` にある）。`book/` で `mdbook serve` すると、表示された URL で読める。
 数式は MathJax で描画するので、生の Markdown で読むと `\\[ \\]` が見えるが、ビルドすれば数式になる。
