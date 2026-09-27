@@ -52,7 +52,10 @@ Rust では `f64::MANTISSA_DIGITS` が `53` を返す。
   最近接丸めの相対誤差の上界
 
 誤差解析で出てくるのは \\(u\\) のほうである。
-基本演算 \\(\mathrm{op} \in \\{+,-,\times,\div\\}\\) について、オーバーフロー・アンダーフローが起きない限り
+実数 \\(x\\) を最も近い `f64` に丸めた値を \\(\mathrm{fl}(x)\\) と書く。
+IEEE 754 は、`f64` 同士の基本演算の結果を、正確な実数の結果を丸めた値と定めている。
+つまり `f64` の \\(x, y\\) と基本演算 \\(\mathrm{op} \in \\{+,-,\times,\div\\}\\) に対して、`f64` の演算が返す値は \\(\mathrm{fl}(x \mathbin{\mathrm{op}} y)\\) である。
+この値について、オーバーフロー・アンダーフローが起きない限り
 
 \\[
 \mathrm{fl}(x \mathbin{\mathrm{op}} y) = (x \mathbin{\mathrm{op}} y)(1 + \delta), \qquad |\delta| \le u
